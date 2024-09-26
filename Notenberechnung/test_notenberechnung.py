@@ -1,12 +1,24 @@
 from Notenberechnung.notenberechnung import schriftliche_note_bestimmen
 import pytest
 
-def test_schriftliche_note_bestimmen__schmerzen():
+def test_schriftliche_note_bestimmen__top_of_sehr_gut():
     # Arrange
+    prozent = 100
     soll_ergebnis = "sehr gut"
 
     # Act
-    ist_ergebnis = schriftliche_note_bestimmen(100)
+    ist_ergebnis = schriftliche_note_bestimmen(prozent)
+
+    # Assert
+    assert ist_ergebnis == soll_ergebnis
+
+def test_schriftliche_note_bestimmen__bottom_of_sehr_gut():
+    # Arrange
+    prozent = 92
+    soll_ergebnis = "sehr gut"
+
+    # Act
+    ist_ergebnis = schriftliche_note_bestimmen(prozent)
 
     # Assert
     assert ist_ergebnis == soll_ergebnis
