@@ -11,7 +11,7 @@ def test_schriftliche_note_bestimmen__schmerzen():
     # Assert
     assert ist_ergebnis == soll_ergebnis
 
-def test_schriftliche_note_bestimmen__over_100_throws():
+def test_schriftliche_note_bestimmen__over_100_raises_error():
     # Arrange
     testwert = 101
 
@@ -19,7 +19,7 @@ def test_schriftliche_note_bestimmen__over_100_throws():
     with pytest.raises(ValueError):
         schriftliche_note_bestimmen(testwert)
 
-def test_schriftliche_note_bestimmen__negative_number_throws():
+def test_schriftliche_note_bestimmen__negative_number_raises_error():
     # Arrange
     testwert = -1
 
